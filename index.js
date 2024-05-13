@@ -1,10 +1,3 @@
-function findPeakElement(nums) {
-  let left = 0;
-  let right = nums.length - 1;
-  while (left < right) {
-    const mid = Math.floor((left + right) / 2);
-    if (nums[mid] < nums[mid + 1]) left = mid + 1;
-    else right = mid;
-  }
-  return left;
+function findNumbers(nums) {
+  return nums.filter((num) => num.toString().length % 2 === 0).length;
 }
