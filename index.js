@@ -1,25 +1,9 @@
-const cocktailShakerSort = (arr) => {
-  let swapped = true;
-  let start = 0;
-  let end = arr.length - 1;
-  while (swapped) {
-    swapped = false;
-    for (let i = start; i < end; i++) {
-      if (arr[i] > arr[i + 1]) {
-        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-        swapped = true;
-      }
-    }
-    if (!swapped) break;
-    swapped = false;
-    end--;
-    for (let i = end - 1; i >= start; i--) {
-      if (arr[i] > arr[i + 1]) {
-        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
-        swapped = true;
-      }
-    }
-    start++;
+function maxProfit(prices) {
+  let minPrice = Infinity;
+  let maxProfit = 0;
+  for (const price of prices) {
+    minPrice = Math.min(minPrice, price);
+    maxProfit = Math.max(maxProfit, price - minPrice);
   }
-  return arr;
-};
+  return maxProfit;
+}
